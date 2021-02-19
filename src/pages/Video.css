@@ -1,0 +1,9 @@
+#videos {
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+video {
+    margin-bottom: 20px;
+}

@@ -1,22 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import TabList from './TabList';
+import Body from './Body';
+
+const pages = ["Text","Image","Video","Table","Email"];
 
 function App() {
+  const [tabID, setTabID] = useState("Text");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TabList pages={pages} selected={tabID} setPage={(tab) => setTabID(tab)}></TabList>
+        <Body pages={pages} selected={tabID}></Body>
       </header>
     </div>
   );
